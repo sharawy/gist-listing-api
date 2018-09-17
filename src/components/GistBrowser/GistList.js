@@ -23,9 +23,12 @@ const renderListItem = gist => (
 );
 
 const GistList = (props) => (
-    <Fragment>
-        {renderList(props.gists)}
-    </Fragment>
+    <div>
+        <p>Tip: click on card to access gist details</p>
+        <Fragment>
+            {renderList(props.gists)}
+        </Fragment>
+    </div>
 );
 
 GistList.propTypes = {

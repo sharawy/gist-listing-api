@@ -33,9 +33,9 @@ const GistListItem = ({ id, description, comments, created_at, files }) => (
         <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">id: {id}</h5>
             <small className="text-muted">Created:{created_at}</small>
-            <button type="button" className="btn btn-info">
+            <span  className="btn btn-info">
                 Comments <span className="badge badge-light">{comments}</span>
-            </button>
+            </span>
         </div>
         <small className="text-muted">Description: {description}</small>
         <FilesComponet files={files} />

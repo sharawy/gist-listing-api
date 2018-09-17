@@ -40,8 +40,8 @@ class GistListHoc extends Component {
             <div>
                 <form onSubmit={this.handleSearchSubmit}>
                     <div className="form-group">
-                        <input onChange={this.handleUsernameChange} type="text" className="col-md-10" placeholder="Username" />
-                        <button type="submit" className="btn btn-primary">Search</button>
+                        <input onChange={this.handleUsernameChange} type="text" className="col-md-10 col-xs-6" placeholder="Username" />
+                        <button type="submit" className="btn btn-primary col-md-2 col-xs-6">Search</button>
 
                     </div>
                 </form>

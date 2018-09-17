@@ -9,6 +9,7 @@ import { withRouter } from 'react-router-dom';
 
 import { fetchGistDetailsAction } from '../state/actions/GistsActions';
 import { LoadingIndicator } from '../shared/LoadingIndicator/LoadingIndicator';
+import { Message } from '../shared/Error/Message';
 
 
 // COMPONENT
@@ -34,6 +35,9 @@ const GistComponent = ({ gist }) => (
 
                 )
             }
+            {
+                gist.forks.length == 0 && <Message empty={true} message="No forks found" type="INFO"/>
+            }
         </div>
     </div>
 );
@@ -54,14 +58,13 @@ class GistDetails extends Component {
     }
 
     render() {
-        console.log(this.props.gist);
         return (
             <div>
                 {
                     this.props.fetched && this.props.gist && <GistComponent gist={this.props.gist} />
                 }
                 {
-                    <LoadingIndicator empty={this.props.gist} busy={this.props.fetching} failed={this.props.failed} message="Failed to get gist details" />
+                    <LoadingIndicator  busy={this.props.fetching} failed={this.props.failed} message="Failed to get gist details" />
                 }
 
             </div>
